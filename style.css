@@ -85,3 +85,35 @@ border: none;
     transform: translateY(8rem) rotate(20deg);
     opacity: 0;
 }
+
+select{
+    padding:1em;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    width: 10rem;
+    border: none;
+}
+
+.select{
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+    color: #ff6f47;
+}
+
+.select::after{
+    content:"\25BC";
+    background-color: #ff6f47;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    color: white;
+    pointer-events: none;
+}
+.select:hover::after{
+    background-color: white;
+    color: #ff6f47;
+    transition: all 0.3s ease;
+}
