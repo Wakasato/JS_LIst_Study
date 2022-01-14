@@ -55,33 +55,35 @@ function deleteCheck(e){
 
  //check mark
  if(item.classList[0] ===  "complete-btn"){
-  //  const todo = item.parentElement 
-    item.parentElement.classList.toggle('completed');
+    const todo = item.parentElement 
+    todo.classList.toggle('completed');
     console.log('completed')
  }
 }
 
-function filterTodo(e){
- const todos = todoList.childNodes;
-   todos.forEach(function(todo){
-   switch(e.target.value){
-     case "all":
-        todo.style.display= 'flex';
-        break;
-      case "completed":
-         if(todo.classList.contains('completed')){
-            todo.style.display= 'flex';
-         }else{
-            todo.style.display= 'none';
+
+//todoリストの未完、完了、全てのフィルター
+function filterTodo(e) {
+   const todos = todoList.childNodes;
+   todos.forEach(function(todo) {
+      console.log();
+     switch (e.target.value) {
+       case "all":
+         todo.style.display = "block";
+         break;
+       case "completed":
+         if (todo.classList.contains("completed")) {
+           todo.style.display = "block";
+         } else {
+           todo.style.display = "none";
          }
-       break;
-     case "uncompleted":
-      if(!todo.classList.contains('completed')){
-         todo.style.display= 'flex';
-      }else{
-         todo.style.display= 'none';
-      }
-      break;
-    }
+         break;
+       case "uncompleted":
+         if (!todo.classList.contains("completed")) {
+           todo.style.display = "flex";
+         } else {
+           todo.style.display = "none";
+         }
+     }
    });
-}
+ }
